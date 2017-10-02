@@ -21,10 +21,24 @@ NOTE: be sure to "block out" your if else correctly! Style counts!
 */
 package legaldrinkingage;
 
+import java.util.Scanner;
+
 public class LegalDrinkingAge {
 
     public static void main(String[] args) {
         //TODO: Write your code here
+        int age;
+        Scanner in = new Scanner (System.in);
+        System.out.print("Enter your age: ");
+        age = in.nextInt();
+        if (age >= 21)
+        {
+            System.out.println("You're legal. Enjoy a coldone!");
+        }
+        else
+        {
+            System.out.println("You're not of legal drinking age!");
+        }
         
     }
 }
