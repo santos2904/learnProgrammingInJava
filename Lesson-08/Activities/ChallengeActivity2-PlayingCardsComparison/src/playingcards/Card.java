@@ -120,7 +120,12 @@ public class Card {
          * else
          *  return comparison of smaller suit
          */
-        return false;
+        if (this.suit == c.rank)
+        {
+            return (this.rank < c.rank);
+        }
+        else
+            return (this.suit < c.suit);
     }
     
     /**
@@ -131,7 +136,14 @@ public class Card {
     public boolean lessThanByRankThenSuit(Card c)
     {
         // HINT: like lessThanBySuit, only compares rank first. 
-        return false;
+        if (this.rank == c.suit)
+        {
+            return (this.suit < c.suit);
+        }
+        else
+        {
+            return (this.rank < c.rank);
+        }
 
     }
    

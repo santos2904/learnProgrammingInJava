@@ -103,7 +103,7 @@ public class CardTest {
         //arrange
         Card instance = new Card(Ranks.KING, Suits.SPADES);
         Card c = new Card(Ranks.KING,Suits.DIAMONDS);
-  test      boolean expResult = false;
+        boolean expResult = false;
         //act - name rank, so compare suit, spades not less than diamonds
         boolean result = instance.lessThanByRankThenSuit(c);
         //assert
