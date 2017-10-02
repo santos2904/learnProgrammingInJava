@@ -1,0 +1,8 @@
+*.txt
+*.html
+*.xml
+*.mf
+*/nbproject/*
+nbproject/*
+build/*
+SOLUTIONS/*
