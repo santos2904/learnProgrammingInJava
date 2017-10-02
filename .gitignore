@@ -2,6 +2,7 @@
 *.html
 *.xml
 *.mf
+*.properties
 */nbproject/*
 nbproject/*
 build/*
