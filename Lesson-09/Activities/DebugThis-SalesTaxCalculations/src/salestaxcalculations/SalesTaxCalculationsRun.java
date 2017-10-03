@@ -48,33 +48,36 @@ public class SalesTaxCalculationsRun {
         System.out.print("Enter Store # : ");
         int store = input.nextInt();
         System.out.print("Enter order subtotal : ");
-        double subtotal = input.nextInt();
+        double subtotal = input.nextDouble();
         double taxRate = getSalesTaxRate(store);
-        double tax = subtotal + taxRate;
-        double total = subtotal * tax;
+        double tax = subtotal * taxRate;
+        double total = subtotal + tax;
         System.out.printf("=======================\n");
         System.out.printf("Subtotal:\t%f\n",subtotal);
-        System.out.printf("Tax Rate:\t%d\n",taxRate);
+        System.out.printf("Tax Rate:\t%f\n",taxRate);
         System.out.printf("Tax Amt:\t%f\n",tax);
         System.out.printf("Total Amt:\t%f\n",total);
         System.out.printf("=======================\n");      
     }
     
-    public double getSalesTaxRate(int storeNumber)
+    public static double getSalesTaxRate(int storeNumber)
     {
         double taxRate = 0.0;
-        switch (storeNumber) {
-            case 1 then taxRate = 0.08;
+        switch (storeNumber) 
+        {
+            case 1:
+                taxRate = 0.08;
+                break;
             case 2: 
-                taxRate = 0.775;
-               break;
+                taxRate = 0.0775;
+                break;
             case 3:
                 taxRate = 0.07;
-
-            case 4
+                break;
+            case 4:
                 taxRate = 0.0875;
                 break;
-        }          
-      }
+        }   
+        return taxRate;
     }
 }

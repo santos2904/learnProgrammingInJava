@@ -31,7 +31,24 @@ public class LetterGradeRun {
 
     public static void main(String[] args) {
         // TODO: Complete program logic here
-
+       Scanner in = new Scanner(System.in);
+        System.out.print("Enter your final average [0-100] : ");
+        double grade = in.nextDouble();
+        String letter;
+        if (grade >=90 && grade <=100) {
+            letter = "A";
+        } else if (grade >=80 && grade <=90) {
+            letter = "B";
+        } else if (grade >=70 && grade <=80) {
+            letter = "C";
+        } else if (grade >=60 && grade <=70) {
+            letter = "D";
+        } else if (grade >=0 && grade <60) {
+            letter = "F";
+        } else {
+            letter = "Unknown";
+        }
+        System.out.printf("A final average of %f translates to a letter grade of %s\n", grade, letter);
         
     }
 }

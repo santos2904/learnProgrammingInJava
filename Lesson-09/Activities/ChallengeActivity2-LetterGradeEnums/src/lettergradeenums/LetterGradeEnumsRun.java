@@ -27,10 +27,37 @@
  */
 package lettergradeenums;
 
+import java.util.Scanner;
+
 public class LetterGradeEnumsRun {
 
     public static void main(String[] args) {
         // TODO: Implement programming logic here
-        
+        Scanner in = new Scanner (System.in);
+        System.out.print("Enter your final average [0-100]: ");
+        double finalGrade;
+        finalGrade = in.nextDouble();
+        Grade finalLetter;
+        if(finalGrade >= Grade.A.Min())
+        {
+            finalLetter = Grade.A;
+        }
+        else if (finalGrade >= Grade.B.Min())
+        {
+            finalLetter = Grade.B;
+        }
+        else if (finalGrade >= Grade.C.Min())
+        {
+            finalLetter = Grade.C;
+        }
+        else if(finalGrade >= Grade.D.Min())
+        {
+            finalLetter = Grade.D;
+        }
+        else
+        {
+            finalLetter = Grade.F;
+        }
+        System.out.printf ("A final average of %f translates to a letter grade of %s\n", finalGrade, finalLetter);
     }
 }

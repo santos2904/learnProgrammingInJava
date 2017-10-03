@@ -25,7 +25,33 @@ public class ATM {
 
     public static void main(String[] args) {
         // TODO : code here
-
+        Scanner in = new Scanner (System.in);
+        ATMMenu option;
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("~~~~     Welcome to SantaBank ATM!     ~~~~");
+        System.out.println("~~~~            Main Menu              ~~~~");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("Select an option");
+        System.out.println("[d=Deposit, w=Withdrawl, b=Balance, q=Quit]");
+        String choice = in.nextLine();
+        switch (choice)
+        {
+            case "d":
+                option = ATMMenu.Deposit;
+                break;
+            case "w":
+                option = ATMMenu.Withdrawl;
+                break;
+            case "b":
+                option = ATMMenu.Balance;
+                break;
+            case "q":
+                option = ATMMenu.Quit;
+                break;  
+            default:
+                option = ATMMenu.Quit;
+                break; 
+        }
+        System.out.printf("You selected %s: %s\n", choice, option);
     }
-    
 }
