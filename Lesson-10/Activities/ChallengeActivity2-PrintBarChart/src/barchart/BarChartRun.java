@@ -29,8 +29,66 @@ public class BarChartRun {
 
     public static void main(String[] args) {        
         //TODO: Write code here
-        
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a value for A: ");
+        int a = in.nextInt();
+        System.out.print("Enter a value for B: ");
+        int b = in.nextInt();
+        drawBarChart(a);
+        drawBarChart(b);
     }
     
-   
+    public static void drawBarChart(int value) {
+        System.out.printf("%d : [", value);
+        for (int i = 0; i <= value; i++){
+            System.out.print("#");
+        }
+        System.out.println("]");
+    }
 }
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /**
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a value for A: ");
+        int a = in.nextInt();
+        System.out.print("Enter a value for B: ");
+        int b = in.nextInt();
+        System.out.printf("%d : [", a);
+        for (int i = 0; i <= a; i++)
+        {
+            System.out.print("#");
+        }
+        System.out.println("]");
+        
+        System.out.printf("%d : [", b);
+        for (int i = 0; i <= b; i++)
+        {
+            System.out.print("#");
+        }
+        System.out.println("]");
+        */
+    
+ 

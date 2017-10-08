@@ -32,7 +32,10 @@ public class RPGAbilityScores {
         System.out.printf("Str Int Dex Con Wis Cha\n");
         // TODO: Write for loop to roll d6 3 times for each of the 6 abilities, 
         // printing them out directly to the console
-
+        for (int i = 1; i <=6; i++) {
+            System.out.printf ("%3d ", d6.roll(3));
+        }
+        System.out.println();
     }
 }
 

@@ -26,10 +26,11 @@ public class MultiplicationTable {
 
     public static void main(String[] args) {
         int max = 10;
-        for (int i=1; i>=max; i++ {
-            for(int j=0;j<i;j+) {
-                System.out.printf("%3d", i*j);
+        for (int i=1; i<=max; i++) {
+            for(int j=1 ; j<=max ;j++) {
+                System.out.printf("%4d", i*j);
             }
+            System.out.println();
         }
     }
 }

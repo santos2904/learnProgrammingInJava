@@ -23,6 +23,18 @@ public class CountingWithFor {
 
     public static void main(String[] args) {
         //TODO: Write your code here
-   
+        int count = 0;
+        int rolls = 5000;
+        Die die = new Die(6);
+        for (int i = 0; i <= rolls; i++)
+        {
+            if (die.roll() == 6)
+            {
+                count++;
+            }
+        }
+        System.out.printf("Number of rolls  : %d\n", rolls);
+        System.out.printf("Number of 1s     : %d\n", count);
+        System.out.printf("Percentage of 1s : %,.3f\n", (double)count/rolls);
     }    
 }
