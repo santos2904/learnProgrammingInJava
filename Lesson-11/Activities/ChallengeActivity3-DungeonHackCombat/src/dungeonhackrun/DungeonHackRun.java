@@ -48,6 +48,8 @@ public class DungeonHackRun {
         // TODO: Modify this code to use a while loop - attacking until someone's dead! 
         
         // player's turn
+        while (true){
+        round ++;
         int roll = d20.roll();
         System.out.printf("[Round=%d|Roll=%d|AC=%d] ",round,roll,monster.armorClass());
         System.out.printf("%s %s his %s at the %s and "
@@ -90,6 +92,17 @@ public class DungeonHackRun {
             }
             System.out.println("!");
         }
+        if (player.isDead())
+        {
+            System.out.println("You are dead!");
+            break;
+        }
+        if (monster.isDead())
+        {
+            System.out.printf("The %s is dead", monster.name());
+            break;
+        }
             
     }
+}
 }
