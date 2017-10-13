@@ -11,7 +11,7 @@ public class DataPoint {
     
     /**
      * Constructor makes a new data point
-     * @param label the data label for the point
+     * @param name the data label for the point
      * @param value the data value for the point
      */
     public DataPoint(String name, int value) {
@@ -40,9 +40,12 @@ public class DataPoint {
      */
     public void plot() {
         // TODO: Implement this method should output data like this:
-        //   Facebook : [######] (6)
-
-        
+        // Facebook : [######] (6)
+        System.out.printf("%10s:[", this.label);
+        for (int i = 1; i <= this.value; i++){
+            System.out.print("#");
+        }
+        System.out.printf("] (%d)\n", this.value);  
     }
     
 }

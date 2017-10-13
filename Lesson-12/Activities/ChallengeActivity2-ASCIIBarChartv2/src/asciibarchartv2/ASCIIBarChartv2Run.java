@@ -47,14 +47,21 @@ public class ASCIIBarChartv2Run {
         DataPoint[] dp = new DataPoint[5];
         int count=1;
         System.out.printf("Enter 5 data points to be plotted :\n");
-        
         // TODO: write a loop to accept label and value inputs then store
-        //       each as a new DataPoint in the dp array.
+        // each as a new DataPoint in the dp array.
 
-        
+        while (count <= 5) {
+            System.out.printf("Data point %d : Enter Label : ", count);
+            String label = input.next();
+            System.out.printf("Data point %d : Enter Value : ", count);
+            int value = input.nextInt();
+            dp[count-1] = new DataPoint(label, value);
+            count++;
+        }
         // TODO: use a for loop to call the plot() method for each of the 
-        //       data points in the dp array.
-
-        
+        // data points in the dp array.
+        for (DataPoint a : dp) {
+            a.plot();
+        }        
     }
 }

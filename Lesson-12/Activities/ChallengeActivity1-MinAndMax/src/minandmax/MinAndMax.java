@@ -31,7 +31,7 @@ public class MinAndMax {
         // Read inputs into the array
         System.out.println("Enter 10 Integers.");
         for(int i=0;i<array.length;i++) {
-            System.out.printf("Enter Integer %d ==>",i+1);
+            System.out.printf("Enter Integer %d ==> ",i+1);
             array[i] = input.nextInt();
         }
         // Print out the array
@@ -53,7 +53,11 @@ public class MinAndMax {
      */
     public static int getMin(int[] array) {
         //TODO: write code here
-        return 0;
+        int min = array[0];
+        for (int small = 0; small < array.length; small++){
+            min = (small < min) ? small : min;
+        }
+        return min;
     }
     
     /** 
@@ -63,6 +67,10 @@ public class MinAndMax {
      */
     public static int getMax(int[] array) {
         //TODO: write code here
-        return 0;
+        int max = array[0];
+        for (int large : array){
+            max = (large > max) ? large : max;
+        }
+        return max;
     }    
 }
