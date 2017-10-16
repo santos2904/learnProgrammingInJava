@@ -85,7 +85,24 @@ public class English2YodaRun {
         // note: how you translate depends on the number of words (size of the array)
         //       once you manipulate the words[] array, use CombineWords() to put
         //        in back into a sentence.
-        
+        int wrd = words.length;
+        switch (wrd) {
+            case 1: //1 word sentence = same
+                yoda = english;
+                break;
+            case 2://2 word sentence = swap words
+                for (int i = wrd - 1; i >= 0; i--){
+                    yoda += words[i] + " "; 
+                } break;
+            case 3://3 word sentence = place last word in the beginning of the sentence
+                yoda = words[2] + " " + words[0] + " " + words[1];
+                break;
+            case 4:// 4 work sentence = exchange the first two words with the last two words
+                yoda = words[2] + " " + words [3] + " " + words [0] + " " + words [1];
+                break;
+            default:
+                yoda = "Error! Please try setences with one to four words";      
+        }
         return yoda;
     }
 }

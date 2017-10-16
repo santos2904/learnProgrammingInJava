@@ -13,13 +13,13 @@ public class TestScores {
      * Constructor required an array of scores
      * @param scores an array of test scores
      */
-    public TestScores(int scores) {
+    public TestScores(int[] scores) {
         this.scores = scores;
     }
     
     /**
      * Getter for scores
-     * @return the array of scores
+     * @return the array of scores b  
      */
     public int[] getScores() {
         return this.scores;
@@ -39,9 +39,9 @@ public class TestScores {
      * @return the lowest test score
      */
     public int Lowest() {
-        int lowest = 0;
-        for (int i=0, i<= this.scores.length;i++) {
-            lowest = scores[i] < lowest[i] ? scores[i] : lowest;
+        int lowest = 101;
+        for (int s : this.scores) {
+            lowest = s < lowest ? s : lowest;
         }
         return lowest;
     }
@@ -53,8 +53,9 @@ public class TestScores {
     public int Highest() {
         int highest = -1;
         for (int s : this.scores) {
-            highest = s > highest ?  highest : s;
+            highest = s > highest ?  s : highest;
         }
+        return highest;
     }
     
     /**
@@ -63,8 +64,8 @@ public class TestScores {
      */
     public double Average() {
         double sum = 0.0;
-        for (int s ; this.scores) {
-            sum = s;
+        for (int s : this.scores) {
+            sum = sum + s;
         }
         return sum/this.scores.length;
     }
