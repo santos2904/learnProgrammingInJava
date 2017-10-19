@@ -6,7 +6,7 @@ package tictactoe;
  */
 public class Board {
     
-    private Marker[][] board;
+    private final Marker[][] board;
     
     /**
      * Initializes a new Tic-Tac-Toe board (which is a 2-d array 
@@ -85,12 +85,24 @@ public class Board {
          */ 
         boolean rowWinner = false;
         boolean colWinner = false;
-        boolean angleWinner = false;
+        boolean angWinner = false;
         
         // TODO: Implement code here
+        angWinner = (board[0][0] == marker && board[1][1] == marker && board[2][2] == marker ||
+                     board[0][2] == marker && board[1][1] == marker && board[2][0] == marker);
+        
+        rowWinner = (board[0][0] == marker && board[0][1] == marker && board[0][2] == marker ||
+                     board[1][0] == marker && board[1][1] == marker && board[1][2] == marker ||
+                     board[2][0] == marker && board[2][1] == marker && board[2][2] == marker);
+        
+        colWinner = (board[0][0] == marker && board[1][0] == marker && board[2][0] == marker ||
+                     board[0][1] == marker && board[1][1] == marker && board[2][1] == marker ||
+                     board[0][2] == marker && board[1][2] == marker && board[2][2] == marker);
+       
+        
         
         // We have a winner if we have a row, column or angle winner
-        return rowWinner || colWinner || angleWinner;
+        return rowWinner || colWinner || angWinner;
         
     }
     
