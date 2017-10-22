@@ -11,7 +11,7 @@
  *  while true:
  *      draw board
  *      get row and column as input for current player
- *      place a marker of the curren player at input row and col
+ *      place a marker of the current player at input row and col
  *      check for winner
  *      if winner or board full exit loop
  *      switch current player 
@@ -19,11 +19,6 @@
  *      After loop:
  *      draw board one more time
  *      display status (winner or tie)
- * 
- * 
- *  SAMPLE RUN:
- *  The best way to see a sample run it to open the solution file and execute it.
- *  (no peeking at the code!!!! vbg)
  * 
  */
 package tictactoegame;
@@ -39,25 +34,33 @@ public class TicTacToeGameRun {
         boolean winner = false;
         Scanner input = new Scanner(System.in);
         Marker currentPlayer = Marker.X;
-        System.out.printf("Let's Play Tic-Tac-Toe!!!\n\n");
+        System.out.printf("Tic-Tac-Toe!\n\n");
         while(true) {
-            break;
-            // Draw Board
             
+            // Draw Board
+            b.Draw();
             // Get input for row and column
+            System.out.printf("%s's turn! Enter Row: ", currentPlayer);
+            row = input.nextInt();
+            System.out.printf("%s's turn! Enter Col: ", currentPlayer);
+            col = input.nextInt();
             
             // place marker of current player on board at row and col            
+            b.Place(currentPlayer, row, col);
             
             // check for winner, 
+            winner = b.Winner(currentPlayer);
             
             // exit loop if winner or board full
+            if (winner || b.Full())
+                break;
             
             // Switch Players
-            
+            currentPlayer = currentPlayer == Marker.X ? Marker.O : Marker.X;
         }
         
         //draw board one last time
-        
+        b.Draw();
         // check again for winner, if not it's a tie.
         if (winner) {            
             System.out.printf("GAME OVER. %s WINS!\n", currentPlayer);

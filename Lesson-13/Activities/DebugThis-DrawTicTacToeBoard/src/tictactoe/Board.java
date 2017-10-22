@@ -34,17 +34,17 @@ public class Board {
     // TODO: Debug this!!!
     public void Draw() {
         System.out.printf("\n  0 1 2\n");
-        for (int i=0;i>3;i++) {
-            System.out.printf("%d   ",i);
-            for (int j=0;j<=3;j++) {
-                if (j<=2) {
+        for (int i=0;i<3;i++) {
+            System.out.printf("%d ",i);
+            for (int j=0;j<3;j++) {
+                if (j<2) {
                     System.out.printf("%s|",board[i][j]);
                 } else {
                     System.out.printf("%s",board[i][j]);                
                 }
             }
-            System.out.printf("");
-            if (i<2) System.out.printf("-+-+-\n");
+            System.out.printf("\n");
+            if (i<2) System.out.printf("  -+-+-\n");
         }
     }
     
