@@ -61,7 +61,7 @@ public class Deck {
      */
     public Card deal() {
         // TODO: remove the top card from the deck and return it
-        return null;
+        return card_deck.remove(0);
     }
     
     /**
@@ -70,6 +70,7 @@ public class Deck {
      */
     public void discard(Card c) {
         // TODO: add the card back to the bottom (e.g. end) of the deck
+        card_deck.add(c);
         
     }
     
@@ -79,8 +80,10 @@ public class Deck {
      * @param j the position of the other card in the deck
      */
     private void card_swap(int i, int j) {
-        // TODO: exchange two cards in the deck at positions i and j        
-
+        // TODO: exchange two cards in the deck at positions i and j  
+        Card I = card_deck.get(i);
+        card_deck.set(i, card_deck.get(j));
+        card_deck.set(j, I);
     }
     
     /**
@@ -89,7 +92,7 @@ public class Deck {
      */    
     public int cardCount() {
         // TODO: return the number of cards in the deck
-        return 0;
+        return card_deck.size();
     }
     
     

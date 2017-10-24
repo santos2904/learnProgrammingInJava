@@ -80,19 +80,32 @@ public class ArrayListOfStudentsRun {
         printStudents(students);              
 
         // 1) Remove Dave... print the list of students.
+        Student dave = students.remove(1);
         System.out.println("Removing student Dave...");
+        printStudents(students);
 
         // 2) Add Dave back to the end of the list... print the list of students
         System.out.println("Adding Dave back to the end...");
+        students.add(dave);
+        printStudents(students);
 
         // 3) Change Kim's GPA to 2.0... print the list of students 
-        System.out.println("Changing Kim's GPA to 2.0...");        
+        System.out.println("Changing Kim's GPA to 2.0...");
+        students.get(2).setGPA(2.0);
+        printStudents(students);
 
         // 4) Add Bill with GPA 1.0 after Sally... print the list of students 
-        System.out.println("Adding Bill after Sally...");        
+        System.out.println("Adding Bill after Sally...");      
+        students.add(2, new Student("Bill", 1.0));
+        printStudents(students);
 
         // 5) Make Kim and Sally swap positions... print the list of students 
-        System.out.println("Make Kim and Sally swap positions...");        
+        Student kim = students.get(3);
+        students.set(3, students.get(1));
+        students.set(1, kim);
+        System.out.println("Make Kim and Sally swap positions...");   
+        printStudents(students);
+        
         
     }
     
@@ -100,7 +113,7 @@ public class ArrayListOfStudentsRun {
         System.out.printf("#\tStudent\tGPA\n");
         System.out.printf("-\t-------\t-------\n");
         for(int i=0;i< al.size();i++) {
-            System.out.printf("%d\t%s\t%f\n", 
+            System.out.printf("%d\t%s\t%,.2f\n", 
                         i, 
                         al.get(i).getName(), 
                         al.get(i).getGPA());

@@ -37,8 +37,18 @@ public class DeckOfPlayingCardsRun {
    public static void main(String[] args) { 
       int seed = 44;
       // TODO: Write your code here
-
-      
+      Deck d = new Deck(1, seed);
+      System.out.printf("Random number seed: %d \n", seed);
+      System.out.printf("Deck(%d) : %s \n", d.cardCount(), d.toString());
+      System.out.println("Shuffling...");
+      d.shuffle();
+      System.out.printf("Deck(%d) : %s \n", d.cardCount(), d.toString());
+      Card dealt = d.deal();
+      System.out.printf("Deal a card. You got the %s \n", dealt);
+      System.out.printf("Deck(%d) : %s \n", d.cardCount(), d.toString());
+      d.discard(dealt);
+      System.out.printf("Discard a card. Returning the %s to the deck \n", dealt);
+      System.out.printf("Deck(%d) : %s \n", d.cardCount(), d.toString());
    }
     
 }
