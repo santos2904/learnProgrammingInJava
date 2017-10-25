@@ -3,8 +3,10 @@ package playingcards;
 import java.util.ArrayList;
 
 /**
- * Hand : an arbitrary collection of cards.
- * @author mafudge
+ * In Hand.java you'll implement the following methods.
+ *  - remove(int index) removes card at index from your hand
+ *  - add(Card c) adds a card to your hand
+ *  - rankCount(int rank) the count of rank in your hand
  */
 public class Hand {
     private ArrayList<Card> cards;  // the big pile of cards
@@ -23,8 +25,8 @@ public class Hand {
      * @return the card removed
      */
     public Card remove(int index) {
-        // TODO: Implement this method
-        return null;
+        // TODO: Implement this method - remove(int index) removes card at index from your hand
+        return cards.remove(index);
     }
     
     /**
@@ -32,8 +34,8 @@ public class Hand {
      * @param c the card to add
      */
     public void add(Card c) {
-        // TODO: Implement this method
-        
+        // TODO: Implement this method - add(Card c) adds a card to your hand
+        cards.add(c);
     }
     
         /**
@@ -63,8 +65,13 @@ public class Hand {
      * @return an integer of the count
      */
     public int rankCount (int rank ) {
-        // TODO: Implement this method
-        return -1;
+        // TODO: Implement this method - rankCount(int rank) the count of rank in your hand
+        int count = 0;
+        for (int i = 0; i < cards.size(); i ++){
+            count = count + (cards.get(i).rank() == rank ? 1 : 0);
+            }
+        return count;
     }
     
 }
+

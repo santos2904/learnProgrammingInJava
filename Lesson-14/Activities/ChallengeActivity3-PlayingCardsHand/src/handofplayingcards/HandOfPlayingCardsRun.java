@@ -48,9 +48,21 @@ import playingcards.*;
 public class HandOfPlayingCardsRun {
     
    public static void main(String[] args) { 
-       int seed = 99;
+       int seed = 99; // Seed = 99.  Try seed 44 for different result.
        // TODO: Implement your code here
-
+       Deck d = new Deck(1, seed); // create a new deck of cards (one deck) with seed as random number seed
+       Hand h = new Hand(); // create a new hand
+       System.out.printf("Random number seed: %d \n", seed); // print the random number seed
+       System.out.printf("New Deck(%d) \t \t: %s \n", d.cardCount(), d.toString()); // print the new deck of cards
+       d.shuffle(); // Every day i'm shuffling...
+       System.out.printf("Shuffled(%d) \t \t: %s \n", d.cardCount(), d.toString()); // print the shuffled deck
+       for (int i = 0; i < 5; i++) {
+           h.add(d.deal()); // deal 5 cards into your hand
+       }
+       System.out.printf("Your Hand (%d) \t \t: %s \n", h.cardCount(), h.toString());  // print the hand, print the card remaining in the deck
+       System.out.printf("Remaining Deck(%d)\t: %s \n", d.cardCount(), d.toString());
+       System.out.printf("Pairs of Queens? %s \n", h.rankCount(Ranks.QUEEN) == 2); // detect whether there is a pair of queens in your hand
+       System.out.printf("Three Kings? %s \n", h.rankCount(Ranks.KING) == 3); // detect whether there is are three kings in your hand
    }
     
 }
