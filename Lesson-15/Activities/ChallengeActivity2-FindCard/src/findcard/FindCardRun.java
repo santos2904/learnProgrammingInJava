@@ -45,14 +45,22 @@ public class FindCardRun {
         //TODO: Write a for loop to count to 7 and another for loop inside that
         //      to count to 4 where you deal a card to the hand, thus delivering
         //        7 cards to 4 people
-
-        
+        for (int i = 0; i < 7; i ++){
+            for (int j = 0; j < hands.length; j++) {
+                hands[j].add(d.deal());
+            }
+        }
+    
         System.out.println();
         System.out.printf("LOOKING FOR: %s\n", find.toString());
 
         //TODO: Loop over all 4 hands[] printing the cards in the hand, and 
         // whether you found the card and one last print for the remaining deck
-
-    
+        for (int i = 0; i < hands.length; i++) {
+            System.out.printf("HAND #%d CARDS ==> %s \n", i, hands[i].toString());
+        }
+        System.out.printf("REMAINING DECK ==> %s \n", d.toString());
+        System.out.printf("%s %s \n", find.toString(), d.indexOf(find) != -1 ? "FOUND" : "NOT FOUND");
     }
 }
+

@@ -112,8 +112,14 @@ public class Deck {
     public int indexOf(Card c) {
         // TODO: loop through the deck looking for card c
         //       when you find it return it's index, when you don't return -1
-
-        return -1;
+        int found = -1;
+        for (int i = 0; i < card_deck.size(); i ++) {
+            if (card_deck.get(i).sameCard(c)) {
+                found = i;
+                break;
+            }
+        }
+        return found;
         
     }
     

@@ -54,7 +54,14 @@ public class Hand {
     public int indexOf(Card c) {
         // TODO: loop through the deck looking for card c
         //       when you find it return it's index, when you don't return -1
-        return -1;
+        int found = -1;
+        for (int i = 0; i < cards.size(); i ++){
+            if (cards.get(i).sameCard(c)) {
+                found = i;
+                break;
+            }
+        }
+        return found;
     }
 
    
@@ -75,7 +82,7 @@ public class Hand {
         // TODO: Implement this method
         int count=0;
         for (int i=0;i<this.cards.size();i++) {
-            count += this.cards.get(i).rank()==rank ? 1:0;
+            count += this.cards.get(i).rank() == rank ? 1 : 0;
         }
         return count;
         
