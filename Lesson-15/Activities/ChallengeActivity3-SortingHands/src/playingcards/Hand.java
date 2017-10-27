@@ -49,6 +49,9 @@ public class Hand {
      * Sorts the Hand ranks first
      * // TODO Implement the public void sortRankFirst() method
      */
+    public void sortRankFirst() {
+        Collections.sort(cards, new CardComparatorRankFirst());
+    }
     
     
 
@@ -56,6 +59,9 @@ public class Hand {
      * Sorts the Hard ranks first
      * // TODO Implement the public void sortSuitFirst() method
      */
+    public void sortSuitFirst() {
+        Collections.sort(cards, new CardComparatorSuitFirst());
+    }
     
 
     

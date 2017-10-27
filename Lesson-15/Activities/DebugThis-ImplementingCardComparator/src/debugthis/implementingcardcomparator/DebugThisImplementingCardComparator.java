@@ -29,14 +29,13 @@ import playingcards.Deck;
 public class DebugThisImplementingCardComparator {
 
     public static void main(String[] args) {
-        Deck d = Deck(1,15);
-        System.out.printf("FRESH DECK ==> %s\n", deck.toString());
+        Deck d = new Deck(1, 15);
+        System.out.printf("FRESH DECK \t ==> %s\n", d.toString());
         d.shuffle();
-        System.out.printf("SHUFFLED DECK ==> %s\n", Deck.toString());
-        deck.sortRankFirst();
-        System.out.printf("DECK RANK SORT ==> %s\n", d.toString());
-        d.sortSuitFirst;
-        System.out.printf("DECK SUIT SORT ==> %s\n", d.toString());
-
+        System.out.printf("SHUFFLED DECK \t ==> %s\n", d.toString());
+        d.sortRankFirst();
+        System.out.printf("DECK RANK SORT \t ==> %s\n", d.toString());
+        d.sortSuitFirst();
+        System.out.printf("DECK SUIT SORT \t ==> %s\n", d.toString());
     }
 }

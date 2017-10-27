@@ -92,7 +92,7 @@ public class Deck {
      */
     public void sortRankFirst() {
         // Use the comparator to sort the collection of cards
-        Collections.sort(this, CardComparatorRankFirst() );
+        Collections.sort(card_deck, new CardComparatorRankFirst() );
     }
     
 
@@ -101,7 +101,7 @@ public class Deck {
      */
     public void sortSuitFirst() {
         // Use the comparator to sort the collection of cards
-        Collections.sort(card_deck, new CardComparatorRankFirst() );
+        Collections.sort(card_deck, new CardComparatorSuitFirst() );
     }
     
     /**

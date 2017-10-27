@@ -35,12 +35,33 @@ HAND #2 SUIT SORT ==> 3♦ 4♦ 4♥ 5♥ 4♠ 6♠ Q♠
 */
 
 package sortinghands;
-
+import playingcards.*;
 public class SortingHandsRun {
 
     public static void main(String[] args) {
-        // TODO: Implement the code here.
-        
-
+        // TODO: Implement the code here. random number seed is 15
+        Deck d = new Deck(1, 15); // use 1 deck of cards
+        Hand hand1 = new Hand();
+        Hand hand2 = new Hand();
+        System.out.printf("FRESH DECK  \t ==> %s \n", d.toString());
+        d.shuffle(); // shuffle that deck
+        System.out.printf("SHUFFLE DECK  \t ==> %s \n", d.toString());
+        for (int i = 0; i < 7; i++) { //deal 7 cards each into two hand 
+            hand1.add(d.deal());
+            hand2.add(d.deal());
+        }  
+        System.out.println();
+        System.out.printf("HAND #1 CARDS \t ==> %s \n", hand1.toString()); //show hand 1
+        hand1.sortRankFirst(); // sort hand 1 by rank
+        System.out.printf("HAND #1 RANK \t ==> %s \n", hand1.toString()); 
+        hand1.sortSuitFirst(); // sort hand 1 by suit
+        System.out.printf("HAND #1 SUIT \t ==> %s \n", hand1.toString()); 
+        System.out.println();
+        System.out.printf("HAND #2 CARDS \t ==> %s \n", hand2.toString());
+        hand2.sortRankFirst();
+        System.out.printf("HAND #2 RANK \t ==> %s \n", hand2.toString()); 
+        hand2.sortSuitFirst();
+        System.out.printf("HAND #2 SUIT \t ==> %s \n", hand2.toString());
     }
 }
+
