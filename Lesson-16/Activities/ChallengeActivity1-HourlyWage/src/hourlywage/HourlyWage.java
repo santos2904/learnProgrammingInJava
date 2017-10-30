@@ -24,7 +24,23 @@ import java.util.Scanner;
 public class HourlyWage {
 
     public static void main(String[] args) {
-       ///TODO: Write code here
-        
+        double wage, hours = 40;
+        while (true) {
+            try {
+                Scanner in = new Scanner(System.in);
+                System.out.print("Enter your hourly wage: ");
+                wage = in.nextDouble();
+                break;
+            } catch ( InputMismatchException a ) {
+                System.out.printf("That's not a valid number \n");
+            } finally {
+                System.out.println("Calculates wage for 40 hour work week");
+            }
+        }
+        if (hours * wage >= 1000)
+        {
+            System.out.print("Wow! ");
+        }
+       System.out.printf("You make $%,.2f weekly. \n", hours * wage);
     }
 }
