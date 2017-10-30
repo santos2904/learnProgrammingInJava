@@ -1,5 +1,6 @@
 package playingcards;
 
+
 /**
  * Java implementation of a playing card
  * @author mafudge
@@ -22,12 +23,13 @@ public class Card {
      * @param rank the integer representation of the rank 0=deuce .. 12=ace
      * @param suit the integer representation of the suit 0=clubs .. 3=spades
      */
-    public Card(int rank, int suit ) {
+    public Card(int rank, int suit ) throws SuitOutOfRangeException, RankOutOfRangeException {
         // TODO: Re-write this Constructor to throw exceptions
-        
+        if (suit < 0 || suit > 3 ) throw new SuitOutOfRangeException();
         this.suit = suit % 4;
+        if (rank < 0 || rank > 12) throw new RankOutOfRangeException();
         this.rank = rank % 13;
-    }
+        }
  
     /**
      * Get the rank of the card

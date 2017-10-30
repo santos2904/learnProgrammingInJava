@@ -64,7 +64,8 @@ public class TicTacToeGameRun {
             System.out.printf("%s's turn! Enter Col : ",currentPlayer);
             col = input.nextInt();            
 
-            // place marker of current player on board at row and col            
+            // place marker of current player on board at row and col   
+            try {
             b.Place(currentPlayer, row, col); // place on board
             winner = b.Winner(currentPlayer); // check for winner, 
             if (winner || b.Full()) { // exit loop if winner or board full
@@ -72,6 +73,11 @@ public class TicTacToeGameRun {
             }
             // Switch Players
             currentPlayer = currentPlayer == Marker.X ? Marker.O : Marker.X;
+            } catch (SpaceNotAvailableException e) {
+                System.out.print("That Space is not available. Try again.");
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.print("That Space is not valid. Try again");
+            }
 
         } // end while
         

@@ -63,12 +63,12 @@ public class Board {
      * @param column the column (0,1 or 2)
      * @return true if the marker was placed
      */
-    public boolean Place(Marker marker, int row, int column)  {
+    public boolean Place(Marker marker, int row, int column) throws SpaceNotAvailableException {
         if (this.board[row][column] == Marker.EMPTY) {
             this.board[row][column] = marker;
             return true;
         } else {
-            return false;
+            throw new SpaceNotAvailableException();
         }
     }
     
