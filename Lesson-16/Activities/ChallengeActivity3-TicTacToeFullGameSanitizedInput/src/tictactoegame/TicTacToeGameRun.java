@@ -74,9 +74,11 @@ public class TicTacToeGameRun {
             // Switch Players
             currentPlayer = currentPlayer == Marker.X ? Marker.O : Marker.X;
             } catch (SpaceNotAvailableException e) {
-                System.out.print("That Space is not available. Try again.");
+                System.out.print("That Space is not available. Try again. ");
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.print("That Space is not valid. Try again");
+                System.out.print("That Space is not valid. Try again. ");
+            } finally {
+                System.out.print("Enter 0, 1 or 2");
             }
 
         } // end while
