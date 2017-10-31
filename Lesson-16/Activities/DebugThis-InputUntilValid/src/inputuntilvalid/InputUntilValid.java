@@ -32,20 +32,17 @@ public class InputUntilValid {
         // This program uses exceptions to handle invalid input
         double gpa;
         while (true) {
-            try 
+            try {
                 Scanner input = new Scanner(System.in);
                 System.out.print("Enter your GPA between 0.0 and 4.0 ==>  ");
                 gpa = input.nextDouble();
-                if (gpa < 0 && gpa > 4) {
-                    throw InputOutOfRangeException();
-                } else {
-                    break;
-                }
-            } catch (InputMismatchException) {
-                System.out.println("Input mismatch error. You must enter a number.");
-            } catch (InputOutOfRangeexception e) {
-                System.out.println("Input out of range. You must enter a valid value.");
-            }
+                if (gpa < 0 || gpa > 4) throw new InputOutOfRangeException();
+                else { break; }
+            } catch (InputMismatchException e) {
+                System.out.println("INPUT MISMATCH ERROR. You must enter a number.");
+            } catch (InputOutOfRangeException e) {
+                System.out.println("INPUT OUT OF RANGE. You must enter a valid value between 0 and 4.");
+            }      
         }
         System.out.printf("You entered a gpa of %s\n",gpa);
     }

@@ -1,5 +1,5 @@
 package inputuntilvalid;
 
-public class InputOutOfRangeException inherits Exception {
+public class InputOutOfRangeException extends Exception {
     
 }
