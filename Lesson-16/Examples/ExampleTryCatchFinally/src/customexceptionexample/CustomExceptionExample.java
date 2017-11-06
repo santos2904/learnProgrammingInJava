@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class CustomExceptionExample {
 
     public static void main(String[] args) {
-       /* This example will throw an InputMismatchException
-          when you enter a non-integer: */
        Scanner input = new Scanner(System.in);
        int i;
        System.out.print("Enter an integer between 1 and 10: ");
