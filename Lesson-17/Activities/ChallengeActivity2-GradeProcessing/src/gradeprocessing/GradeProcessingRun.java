@@ -22,10 +22,11 @@ Max   :  100
 package gradeprocessing;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class GradeProcessingRun {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         Grades grades = new Grades();
         grades.Load(new File("grades.txt"));

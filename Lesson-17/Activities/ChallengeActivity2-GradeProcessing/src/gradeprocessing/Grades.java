@@ -7,8 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class Grades {
 
@@ -21,9 +20,14 @@ public class Grades {
      /**
       * Loads grades from file
       * @param file The file reference to load the grades from 
+      * @throws java.io.FileNotFoundException 
       */
-     public void Load(File file) {   
+     public void Load(File file) throws FileNotFoundException {   
          // TODO: load each grade from the file into the ArrayList
+         Scanner in = new Scanner (file);
+         while (in.hasNext()){
+             _grades.add(in.nextInt());
+         }
      }
      
      /**

@@ -26,21 +26,21 @@ import java.util.Scanner;
 public class ThePassword {
 
     public static void main(String[] args) throws FileNotFoundException {
-            System.out.println("PASSWORD CHECKER");
-            File file = new File("password.txt");
-            Scanner finput = new Scanner(file);
-            Scanner input = new Scanner(System.in);
-            String pw = finput.nextLine();
-            finput.close();
-            while (true) {
-                System.out.println("Enter Password: ");
-                String typed = input.nextLine();
-                if (typed.equals(pw)) {
-                    System.out.println("Correct Password!");
-                    break;
-                } else {
-                    System.out.println("Invalid password!");
+        System.out.println("PASSWORD CHECKER");
+        File file = new File("password.txt");
+        Scanner finput = new Scanner(file);
+        Scanner input = new Scanner(System.in);
+        String pw = finput.nextLine();
+        finput.close();
+        while (true) {
+            System.out.println("Enter Password: ");
+            String typed = input.nextLine();
+            if (typed.equals(pw)) {
+                System.out.println("Correct Password!");
+                break;
+            } else {
+                System.out.println("Invalid password!");
+            }
         }
     }
-}
 }

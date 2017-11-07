@@ -27,10 +27,27 @@ Student: Bill Melator	3.420000
 */
 package studentfileio;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class StudentFileIORun {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         // TODO code your application logic here
-        
+        Scanner in = new Scanner (System.in);
+        File f = new File("student.txt");
+        Student s1 = new Student();
+        Student s2 = new Student();
+        System.out.printf("Enter Student Name: \t");
+        s1.setName(in.nextLine());
+        System.out.printf("Enter Student GPA: \t");
+        s1.setGPA(in.nextDouble());
+        System.out.printf("Adding to %s \n", f.getName());
+        s1.Save(f);
+        System.out.printf("Loading from %s \n", f.getName());
+        s2.Load(f);
+        System.out.printf("Student: \t %s", s2);
     }
 }
