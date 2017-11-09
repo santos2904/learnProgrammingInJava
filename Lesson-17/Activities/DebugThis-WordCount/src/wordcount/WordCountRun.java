@@ -23,6 +23,9 @@ Word Count: 52
 
 package wordcount;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class WordCountRun {
 
     public static void main(String[] args) {
@@ -30,10 +33,11 @@ public class WordCountRun {
         int wordCount = 0;
         try {
             File file = new File("data.txt");
-            Scanner input = Scanner();
-            while (hasNext()) {
-                word = input.next;
+            Scanner input = new Scanner(file);
+            while (input.hasNext()) {
+                word = input.next();
                 System.out.println(word);
+                wordCount++;
             }
             System.out.printf("Word Count: %d\n",wordCount);
         } catch (Exception e) {
