@@ -121,8 +121,17 @@ public class TempConv extends javax.swing.JFrame {
     private void jButtonConvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvertActionPerformed
         // TODO write your code here to perform the proper conversion and
         //      display the results.
-
-
+        String x;
+        double t = Double.parseDouble(jTextTemp.getText());
+        if (jRadioButtonC.isSelected()) {
+            t = (t * 1.8) + 32;
+            x = "F";
+        }
+        else {
+            t = (t - 32) * 0.5556;
+            x = "C";
+        }
+        jLabelAnswer.setText(String.format("%.2f ° %s", t, x));
     }//GEN-LAST:event_jButtonConvertActionPerformed
 
     private void jTextTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTempActionPerformed
