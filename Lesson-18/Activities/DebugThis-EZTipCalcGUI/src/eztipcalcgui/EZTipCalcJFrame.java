@@ -116,13 +116,13 @@ public class EZTipCalcJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculateActionPerformed
-        int  bill, tip, total, pct;
-        bill = this.jTextFieldBillAmount.getText();
-        pct = this.jSpinnerTip.getValue()/100;
-        tip = bill + pct;
-        total = bill * tip;
-        this.jTextFieldTipAmount.setText(tip);
-        this.jTextFieldBillTotal = total;
+        double bill, tip, total, pct;
+        bill = Double.parseDouble(this.jTextFieldBillAmount.getText());
+        pct = (int)this.jSpinnerTip.getValue()/100.0;
+        tip = bill * pct;
+        total = bill + tip;
+        this.jTextFieldTipAmount.setText(String.format("%.2f", tip));
+        this.jTextFieldBillTotal.setText(String.format("%.2f", total));
     }//GEN-LAST:event_jButtonCalculateActionPerformed
 
     /**
