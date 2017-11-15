@@ -5,19 +5,24 @@
  */
 package mathflashcards;
 
+import java.util.Random;
 
 /**
  *
  * @author mafudge
  */
 public class MathFlashCards extends javax.swing.JFrame {
-    
+
+    private Random gen;
+    private int answer;
 
     /**
      * Creates new form MathFlashCards
      */
     public MathFlashCards() {
         initComponents();
+        gen = new Random();
+        jButtonNextQuestionActionPerformed(null);
     }
 
     /**
@@ -29,22 +34,127 @@ public class MathFlashCards extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelTitle = new javax.swing.JLabel();
+        jTextFieldAnswer = new javax.swing.JTextField();
+        jButtonGo = new javax.swing.JButton();
+        jLabelQuestion = new javax.swing.JLabel();
+        jLabelAnswer = new javax.swing.JLabel();
+        jButtonNextQuestion = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Java Math Flash Cards");
+
+        jLabelTitle.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jLabelTitle.setText("MATH FLASH CARDS");
+        jLabelTitle.setMaximumSize(new java.awt.Dimension(150, 30));
+        jLabelTitle.setMinimumSize(new java.awt.Dimension(150, 30));
+
+        jTextFieldAnswer.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jTextFieldAnswer.setText("Input");
+        jTextFieldAnswer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAnswerActionPerformed(evt);
+            }
+        });
+
+        jButtonGo.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jButtonGo.setText("Go!");
+        jButtonGo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGoActionPerformed(evt);
+            }
+        });
+
+        jLabelQuestion.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jLabelQuestion.setText(" ");
+
+        jLabelAnswer.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jLabelAnswer.setText("Answer!");
+
+        jButtonNextQuestion.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jButtonNextQuestion.setText("Next Question");
+        jButtonNextQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextQuestionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 384, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jLabelAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addComponent(jButtonNextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(jButtonGo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 303, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonGo))
+                .addGap(42, 42, 42)
+                .addComponent(jLabelAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jButtonNextQuestion)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldAnswerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAnswerActionPerformed
+        // TODO add your handling code here:
+        int answerInput = Integer.parseInt(jTextFieldAnswer.getText());
+        if (answer == answerInput) {
+            jLabelAnswer.setText("CORRECT!");
+        } else {
+            jLabelAnswer.setText("Incorrect");
+        }
+    }//GEN-LAST:event_jTextFieldAnswerActionPerformed
+
+    private void jButtonGoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGoActionPerformed
+        // TODO add your handling code here:
+        int answerInput = Integer.parseInt(jTextFieldAnswer.getText());
+        if (answer == answerInput) {
+            jLabelAnswer.setText("CORRECT!");
+        } else {
+            jLabelAnswer.setText("Incorrect");
+        }
+    }//GEN-LAST:event_jButtonGoActionPerformed
+
+    private void jButtonNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextQuestionActionPerformed
+        // TODO add your handling code here:
+        int x = gen.nextInt(10);
+        int y = gen.nextInt(10);
+        String a = String.format("%d + %d = ", x, y);
+        jLabelQuestion.setText(a);
+        jTextFieldAnswer.setText("");
+        jLabelAnswer.setText("Waiting . . .");
+        answer = x + y;
+    }//GEN-LAST:event_jButtonNextQuestionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -82,5 +192,11 @@ public class MathFlashCards extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonGo;
+    private javax.swing.JButton jButtonNextQuestion;
+    private javax.swing.JLabel jLabelAnswer;
+    private javax.swing.JLabel jLabelQuestion;
+    private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JTextField jTextFieldAnswer;
     // End of variables declaration//GEN-END:variables
 }

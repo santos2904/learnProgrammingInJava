@@ -11,7 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class StudentGui extends javax.swing.JFrame {
-    
+
     private Student student;
 
     /**
@@ -20,26 +20,27 @@ public class StudentGui extends javax.swing.JFrame {
     public StudentGui() {
         initComponents();
         // TODO: Construct student with no arguments
+        student = new Student();
 
         // TODO: Add all 4 StudentYears to the combo box using addItem()
+        jComboBoxYear.addItem(StudentYears.Freshman);
+        jComboBoxYear.addItem(StudentYears.Sophomore);
+        jComboBoxYear.addItem(StudentYears.Junior);
+        jComboBoxYear.addItem(StudentYears.Senior);
 
-        
         clearForm();
     }
-    
+
     /**
-     * This method clears the controls on the form, 
+     * This method clears the controls on the form,
      */
     private void clearForm() {
-        /* TODO: 
-         * set the student name to ""
-         * set is ischool to checked
-         * set the drop down to Freshman
-         * set the gpa to 0.0
-         * set the window title to "New Student"
-         */
 
-        
+        jTextFieldName.setText(""); // Set the student name to ""
+        jCheckBoxIsIschool.setSelected(true); // set is ischool to checked
+        jComboBoxYear.setSelectedItem(StudentYears.Freshman); // set the drop down to Freshman
+        jTextFieldGpa.setText(String.format("%,.2f", 0.0));  // set the gpa to 0.0
+        this.setTitle("New Student"); // Set the window title to "New Student"        
     }
 
     /**
@@ -159,22 +160,24 @@ public class StudentGui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
-                
+
         int returnval = this.jFileChooser1.showSaveDialog(this);
         if (returnval == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser1.getSelectedFile();
-            try {     
-                /* TODO: 
-                 * 1. transfer data from each control to each property of this.student
-                 * 2. save the student object to disk
-                 * 3. set the window title to the file name
-                 */
-                
+            try {
+                this.student.setName(jTextFieldName.getText()); // Transfer data from each control to each property of this.student
+                this.student.setGPA(Double.parseDouble(jTextFieldGpa.getText()));
+                this.student.setIsIschool(jCheckBoxIsIschool.isSelected());
+                this.student.setYear((StudentYears)jComboBoxYear.getSelectedItem());
+
+                this.student.Save(file); // Save the student object to disk
+
+                this.setTitle(file.getName()); // Set the window title to the file name
 
             } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(this,ex);
+                JOptionPane.showMessageDialog(this, ex);
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this,ex);
+                JOptionPane.showMessageDialog(this, ex);
             }
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
@@ -184,19 +187,21 @@ public class StudentGui extends javax.swing.JFrame {
         if (returnval == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser1.getSelectedFile();
             try {
-                /* TODO: 
-                 * 1. read thefile from disk into student
-                 * 2. transer each student property value into each form control
-                 * 3. set the window title to the file name
-                 */
-                
-                
+                this.student.Load(file); // Read thefile from disk into student
+
+                this.jTextFieldName.setText(student.getName()); // Transer each student property value into each form control
+                this.jTextFieldGpa.setText(String.format("%.2f", student.getGPA()));
+                this.jCheckBoxIsIschool.setSelected(student.getIsIschool());
+                this.jComboBoxYear.setSelectedItem(student.getYear());
+
+                this.setTitle(file.getName()); // Set the window title to the file name
+
             } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(this,ex);
+                JOptionPane.showMessageDialog(this, ex);
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this,ex);
+                JOptionPane.showMessageDialog(this, ex);
             } catch (ClassNotFoundException ex) {
-               JOptionPane.showMessageDialog(this,ex);
+                JOptionPane.showMessageDialog(this, ex);
             }
         }
     }//GEN-LAST:event_jButtonLoadActionPerformed
