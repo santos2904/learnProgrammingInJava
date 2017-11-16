@@ -14,6 +14,7 @@ package chucknorrisfactgui;
 public class ChuckNorrisFactJFrame extends javax.swing.JFrame {
     
     // TODO: Create a ChuckNorrisFact object here.    
+    
 
     /**
      * Creates new form ChuckNorrisFactJFrame
