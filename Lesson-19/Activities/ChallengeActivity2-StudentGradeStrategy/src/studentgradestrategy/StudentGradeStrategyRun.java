@@ -28,11 +28,17 @@ import java.util.ArrayList;
 public class StudentGradeStrategyRun {
 
     public static void main(String[] args) {
-        ArrayList<Student> students = new ArrayList<>();
-        
+        ArrayList<Student> students = new ArrayList<>();         
         //TODO: Add 4 students with appropriate name, grades & strategies to the students collection
-        
+        students.add(new Student ("Kelly", 78, new LetterGradeStrategy()));
+        students.add(new Student ("Tommy", 50, new PassFailStrategy()));
+        students.add(new Student ("Chuck", 92, new LetterGradeStrategy()));
+        students.add(new Student ("Sarah", 85, new PassFailStrategy()));
+     
         //TODO: Print out names, grade, and distribution looping over the collection
-
+        System.out.printf("NAME \t GRADE \t DISTRIBUTION \n");
+        for (Student a : students) {
+            System.out.printf("%s \t %d \t %s \n", a.getName(), a.getGrade(), a.getDistribution());
+        }
     }
 }
