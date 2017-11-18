@@ -1,14 +1,14 @@
 package subclassmania;
 
-public  Duck extends Bird {
-    
-   @Override
+public class Duck extends Bird {
+
+    @Override
     public String MakeNoise() {
-        return "";
+        return "Quack";
     }
 
-   @Override
-   public String Type {
+    @Override
+    public String Type() {
         return "Duck";
     }
 }

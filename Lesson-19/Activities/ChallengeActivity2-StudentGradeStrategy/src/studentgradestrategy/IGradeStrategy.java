@@ -5,9 +5,9 @@
  */
 package studentgradestrategy;
 
- interface IGradeStrategy {
-     
-     /* one method, returns the distribution for the grade */
-     public String getDistribution(int grade);
-    
+interface IGradeStrategy {
+
+    /* one method, returns the distribution for the grade */
+    public String getDistribution(int grade);
+
 }

@@ -1,14 +1,18 @@
 package subclassmania;
 
-public class Cat  extends Animal{
+public class Cat extends Animal {
 
-    
-    public boolean hasFur()  {
+    public boolean hasFur() {
         return true;
     }
-    
+
     @Override
-    public int Type() {
+    public String MakeNoise() {
+        return "Purr";
+    }
+
+    @Override
+    public String Type() {
         return "Cat";
     }
 }

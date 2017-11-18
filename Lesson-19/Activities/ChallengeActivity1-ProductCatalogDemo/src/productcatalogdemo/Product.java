@@ -1,9 +1,5 @@
 package productcatalogdemo;
 
-/**
- * A base class of products
- * @author mafudge
- */
 public class Product {
     private String name;
     private double price;
