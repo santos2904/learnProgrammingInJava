@@ -7,14 +7,13 @@
  *  and a link to further information
  *
  */
-
 package earthquake;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Quake
-{
+public class Quake {
+
     // fields for quake information
     private Date date;
     private String details;
@@ -23,33 +22,32 @@ public class Quake
     private String link;
 
     // constructor takes initial values
-    public Quake(Date date, String details, String location, double magnitude, String link)
-    {
-        this.date =  date;
+    public Quake(Date date, String details, String location, double magnitude, String link) {
+        this.date = date;
         this.details = details;
         this.location = location;
         this.magnitude = magnitude;
         this.link = link;
     }
 
-    public Date getDate() {   
-        return this.date;    
+    public Date getDate() {
+        return this.date;
     }
-    
-    public String getDetails() {   
-        return details;   
+
+    public String getDetails() {
+        return details;
     }
-    
+
     public String getLocation() {
-        return location;   
+        return location;
     }
-    
-    public double getMagnitude()  {   
-        return magnitude;   
+
+    public double getMagnitude() {
+        return magnitude;
     }
-    
+
     public String getLink() {
-        return link;   
+        return link;
     }
 
 }
