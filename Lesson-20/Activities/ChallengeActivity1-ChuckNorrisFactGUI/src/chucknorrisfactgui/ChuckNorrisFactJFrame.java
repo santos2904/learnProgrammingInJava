@@ -13,7 +13,8 @@ package chucknorrisfactgui;
 
 public class ChuckNorrisFactJFrame extends javax.swing.JFrame {
     
-    // TODO: Create a ChuckNorrisFact object here.    
+    // TODO: Create a ChuckNorrisFact object here.  
+    private ChuckNorrisFact chuck = new ChuckNorrisFact();
     
 
     /**
@@ -22,6 +23,7 @@ public class ChuckNorrisFactJFrame extends javax.swing.JFrame {
     public ChuckNorrisFactJFrame() {
         initComponents();
         // TODO: Get Random Joke place in TextArea
+        jTextAreaFact.setText(chuck.getRandomJoke());
 
     }
 
@@ -92,7 +94,7 @@ public class ChuckNorrisFactJFrame extends javax.swing.JFrame {
 
     private void jButtonGetFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGetFactActionPerformed
         // TODO: Get Random Joke place in TextArea
-
+        jTextAreaFact.setText(chuck.getRandomJoke());
     }//GEN-LAST:event_jButtonGetFactActionPerformed
 
     /**
