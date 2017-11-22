@@ -19,14 +19,14 @@ public class ChuckNorrisFact {
         this.baseUrl = apiUrl;
     }
     
-    public String getRandomJoke{
+    public String getRandomJoke () {
         String url = baseUrl + "random";
          content = getUrlContent(url);
-         retun getJokeFromJson(content);
+         return getJokeFromJson(content);
     }
     
       
-    public String getJokeById(jokeId) {
+    public String getJokeById(int jokeId) {
         String url = baseUrl + String.format("%d", jokeId);
         content = getUrlContent(url);
         return getJokeFromJson(content);

@@ -19,18 +19,15 @@ CHUCK NORRIS RANDOM FACT:
 Chuck Norris's brain waves are suspected to be harmful to cell phones.
  
  */
-
 package chucknorrisfact;
 
 public class ChuckNorrisFactRun {
 
     public static void main(String[] args) {
-        chuckNorrisFact c = new ChuckNorrisFact;
+        ChuckNorrisFact cnf = new ChuckNorrisFact();
         System.out.println("CHUCK NORRIS FACT #100:");
-        System.out.println(cnf.getJoke(100));
+        System.out.println(String.format(cnf.getJokeById(100)));
         System.out.println("CHUCK NORRIS RANDOM FACT:");
-        System.out.println(cnf.getJokeAsRandom());
+        System.out.println(String.format(cnf.getRandomJoke()));
     }
-
 }
-

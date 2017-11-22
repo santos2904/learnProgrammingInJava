@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class RandomOrgApi {
     
-    private String baseUrl  = "http://www.random.org/integers/?num=10&min=%s&max=%s&col=1&base=10&format=plain&rnd=new";
+    private String baseUrl  = "https://www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=html&rnd=new";
     
     /**
      * Constructor for Random.Org API Wrapper
